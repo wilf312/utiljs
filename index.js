@@ -135,13 +135,10 @@ module.exports.trigger = function($elm, event) {
 
 /**
 JSのシングル・ダブルクオートをエスケープしながらJSONを作成する
-@param {HTMLElement} $elm HTMLの要素
-@param {string} event イベント名
+@param {Object} obj JSON化したいオブジェクト
+@return {String} JSON
 @example
-    trigger(document.querySelector('#button'), 'click')
-
-    // $と併用すると↓のように書ける
-    trigger($('#button'), 'click')
+    JSONStringify({hoge: "'fuga'"})
 */
 module.exports.JSONStringify = function(obj) {
 
