@@ -132,3 +132,26 @@ module.exports.trigger = function($elm, event) {
     return $elm.fireEvent("on"+event, evt)
   }
 }
+
+/**
+JSのシングル・ダブルクオートをエスケープしながらJSONを作成する
+@param {HTMLElement} $elm HTMLの要素
+@param {string} event イベント名
+@example
+    trigger(document.querySelector('#button'), 'click')
+
+    // $と併用すると↓のように書ける
+    trigger($('#button'), 'click')
+*/
+module.exports.JSONStringify = function(obj) {
+
+    if (obj != null && typeof obj === 'object') {
+        JSON.stringify(obj).replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029')
+    }
+    else {
+     return JSON.stringify({})   
+    }
+    
+}
+
+
