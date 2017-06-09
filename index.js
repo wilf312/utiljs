@@ -151,4 +151,14 @@ module.exports.JSONStringify = function(obj) {
     
 }
 
+/**
+0埋め処理
+@param {Number} i 0埋めしたい数値
+@return {String} 0桁の埋めた結果を返す
+@example
+    JSONStringify({hoge: "'fuga'"})
+*/
+module.exports.padding0 = function(i) {
+	return ('0000'+i).slice(-4)
+}
 
